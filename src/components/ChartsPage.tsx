@@ -24,9 +24,11 @@ export default function ChartsPage({ selectedDevice, selectedHierarchy }: Charts
   useEffect(() => {
     // Load chart data when a device or hierarchy is selected
     if (selectedDevice && !selectedHierarchy) {
+      console.log('Loading device chart data for device:', selectedDevice.id);
       loadDeviceChartData(selectedDevice.id);
       setHierarchyChartData(null); // Clear hierarchy data
     } else if (selectedHierarchy && !selectedDevice) {
+      console.log('Loading hierarchy chart data for hierarchy:', selectedHierarchy.id);
       loadHierarchyChartData(selectedHierarchy.id);
       setChartData(null); // Clear device data
     }
